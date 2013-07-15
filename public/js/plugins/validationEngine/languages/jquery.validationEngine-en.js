@@ -123,6 +123,10 @@
                     "regex": /^[0-9\ ]+$/,
                     "alertText": "* Numbers only"
                 },
+                "rollNumber":{
+                    "regex": /^[0-9]+((d|D)[0-9]+)?$/,
+                    "alertText": "*  not an roll number"
+                },
                 "onlyLetterSp": {
                     "regex": /^[a-zA-Z\ \']+$/,
                     "alertText": "* Letters only"
