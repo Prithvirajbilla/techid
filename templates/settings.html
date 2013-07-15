@@ -109,30 +109,30 @@
                             </div>
                             <div class="row-form">
                                 <div class="span3">Roll Number : </div>
-                                <div class="span9"><input type="text" name="rollnumber" class="validate[required,custom[rollNumber],maxSize[11]]" placeholder="roll number" ></div>
+                                <div class="span9"><input type="text" name="rollnumber" class="validate[required,custom[rollNumber],maxSize[11]]" data-errormessage-value-missing="Roll number is required" data-errormessage-custom-error="This doesn't seem to a valid roll number to me" data-errormessage="roll number required" placeholder="roll number" ></div>
                             </div>
                             <div class="row-form">
                                 <div class="span3">Hostel : </div>
-                                <div class="span9"><input type="text" name="hnumber" placeholder="Hostel Number" ></div>
+                                <div class="span9"><input type="text" name="hnumber" class="validate[required,custom[onlyLetterNumber],maxSize[3]]" data-errormessage-custom-error="not a valid hotel number" data-errormessage="hostel number required" placeholder="Hostel Number" ></div>
                             </div>
                             <div class="row-form">
                                 <div class="span3">Room Number : </div>
-                                <div class="span9"><input type="text" name="rnumber" placeholder="room number" ></div>
+                                <div class="span9"><input type="text" name="rnumber" class="validate[required,custom[integer],maxSize[4]]" data-errormessage-custom-error="not a valid room number" data-errormessage="room number required" placeholder="room number" ></div>
                             </div>
                             <div class="row-form">
                                 <div class="span3">Department : </div>
-                                <div class="span9"><input type="text" name="dep" placeholder="department" ></div>
+                                <div class="span9"><input type="text" name="dep" class="validate[required]" placeholder="department" ></div>
                             </div>
                             <div class="row-form input-prepend">
                                 <div class="span6">
                                     <span class="add-on"><i class="icon-envelope icon-white"></i></span>
-                                    <input type="email" placeholder="email" name="email"> 
+                                    <input type="email" placeholder="email" class="validate[required,custom[email]]" name="email"> 
                                 </div>                              
                             </div>
                             <div class="row-form input-prepend">
                                 <div class="span6">
                                     <span class="add-on"><span class="ico-phone"></span></span>
-                                    <input type="text" placeholder="contact number" name="cnumber"> 
+                                    <input type="text" placeholder="contact number" class="validate[required,custom[phone]]" name="cnumber"> 
                                 </div>                              
                             </div>  
                                 <div class="row-form">
