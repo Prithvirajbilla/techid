@@ -24,5 +24,7 @@
 	}
 
 ?>
+
+
 <?php include "include/header.php"; ?>
-<?php include "include/profile.php"; ?>
+<?php include "include/edit.php"; ?>

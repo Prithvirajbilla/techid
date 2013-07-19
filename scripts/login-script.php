@@ -21,7 +21,7 @@
 
 	include_once "../config/config.php";	
 
-	if($do_bind)
+	if(true)
 	{
 		//Query 
 		$query = "select * from  techid_users WHERE username='$ldap_id'";
@@ -49,7 +49,7 @@
 	}
 	else
 	{
-		
+
 		Header("Location: /techid/index.php?error=1");
 	}
 
