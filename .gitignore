@@ -41,3 +41,4 @@ Thumbs.db
 #config.files#
 #################
 config/config.php
+images/*
