@@ -10,9 +10,9 @@
     $ldap_id = $_POST['ldap_id'];
     $password = $_POST['password'];
 
-	$ds = @ldap_connect($ldap_host) or die("Unable to connect to LDAP server. Please try again later.");
+	$ds = @ldap_connect($ldap_host,$ldap_port) or die("Unable to connect to LDAP server. Please try again later.");
 	ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
-	$sr = @ldap_search($ds,$baseDN,"(uid=$ldap_uid)");
+	$sr = @ldap_search($ds,$baseDN,"(uid=$ldap_id)");
 	$info = @ldap_get_entries($ds, $sr);
 	$ldap_uid = $info[0]['dn'];
 	$do_bind = ldap_bind($ds,$ldap_uid,$password);
@@ -20,8 +20,7 @@
 	//config file including once
 
 	include_once "../config/config.php";	
-
-	if(true)
+	if($do_bind)
 	{
 		//Query 
 		$query = "select * from  techid_users WHERE username='$ldap_id'";
