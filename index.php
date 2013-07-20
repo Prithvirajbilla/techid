@@ -4,7 +4,7 @@
 	{
 		$val = $_COOKIE['uid'];
 		$pieces = $_COOKIE['id'];
-		if(md5($val) == $pieces)
+		if(md5($val) == $pieces && $val != "")
 		{
 			header("Location: techprofile.php");
 		}

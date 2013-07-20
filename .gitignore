@@ -42,3 +42,4 @@ Thumbs.db
 #################
 config/config.php
 images/*
+debug.php

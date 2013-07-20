@@ -29,7 +29,7 @@
 		//setting cookie
 		//expiry 
 		error_log($result,0);
-		$expiry = time() + 300 ;
+		$expiry = time() + 3600 ;
 		setcookie("uid",$ldap_id,$expiry,"/techid/");
 		setcookie("id",md5($ldap_id),$expiry,"/techid/");
 		if($result)
