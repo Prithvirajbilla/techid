@@ -10,13 +10,11 @@
 	if($fname == "")
 	{
 		$error = true;
-		header("Location: /techid/settings.php?error=1");
 	}
 	$lname = strip_tags($_POST['lname']);
 	if($lname == "")
 	{
 		$error = true;
-		header("Location: /techid/settings.php?error=1");
 	}
 	$rollno = strip_tags($_POST['rollno']);
 	$room =  strip_tags($_POST['room']);
@@ -24,35 +22,29 @@
 	$about = strip_tags($_POST['about']);
 	$phone = strip_tags($_POST['phone']);
 	$email = strip_tags($_POST['email']);
+	$dept = strip_tags($_POST['dept']);
 	if(filter_var($email, FILTER_VALIDATE_EMAIL))
 	{
 		$error = true;
-		header("Location: /techid/settings.php?error=1");
 	}
 
-	if(!isset($_COOKIE['uid']))
+	if($error == false)
+	{
+		header("Location : /techid/settings.php?error=1");
+	}
+	elseif(isset($_COOKIE['uid']))
 	{
 		$val = $_COOKIE['uid'];
 		$pieces = $_COOKIE['id'];
-		$query = "select * from  techid_users WHERE username='$ldap_id'";
+		$query = "select * from  techid_users WHERE username='$val'";
 		$result = mysql_query($query);
 		$result_array = mysql_fetch_array($result);
+		$id = $result_array['id'];
+		$update_query = "update `techid_users` set `fname`='$fname', `lname`='$lname', `rollno`='$rollno',`dept` = '$dept', `room`='$room', `hostel`='$hostel', `about`='$about', `email`='$email', `phone` ='$phone' where `id`='$id' ";
+		$b= mysql_query($update_query);
+		echo $b;
 
-		$update_query = "UPDATE techid_users SET `fname`='$fname, `lname`='$lname', `rollno`='$rollno', `room`='$room', `hostel`='$hostel', `about`='$about', `email`='$email', `phone` ='$phone' WHERE username='$result_array[username]' ";
-		mysql_query($update_query);
-		header("Location : /techid/techprofile.php");
 	}
-	else
-	{
-		header("Location: /techid");
-	}
-?>
-
-
-
-
-
-
-
+	header("Location: /techid");
 
 ?>
