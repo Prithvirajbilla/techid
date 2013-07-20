@@ -32,9 +32,10 @@
 		$expiry = time() + 3600 ;
 		setcookie("uid",$ldap_id,$expiry,"/techid/");
 		setcookie("id",md5($ldap_id),$expiry,"/techid/");
-		if($result)
+		$result_array = mysql_fetch_array($result);
+		if($result_array['id'] != "")
 		{
-			$result_array = mysql_fetch_array($result);
+			
 			$redirect_url = "/techid/techprofile.php?id=".$result_array["id"];
 			Header ("Location: ". $redirect_url);
 		}
