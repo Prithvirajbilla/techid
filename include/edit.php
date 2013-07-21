@@ -2,7 +2,7 @@
                     <h1><span class="ico-tools"></span> Edit your Profile</h1>
                 </div>
                 <div class="row-fluid"> 
-                    <form id="editform" method="post" action="/techid/scripts/edit.php">
+                    <form id="editform" method="post" enctype="multipart/form-data" action="/techid/scripts/edit.php">
                         <div class="span6">
                             <div class="row-form">
                                 <div class="span3">First Name:</div>
@@ -50,6 +50,17 @@
                                 <div class="span3">About me:</div>
                                 <div class="span9"><textarea name="about" placeholder="about me"><?php echo $result['about'] ?></textarea></div>
                             </div>
+                            <div class="row-form">
+                                    <div class="span3">Profile Pic:</div>
+                                    <div class="span9">                            
+                                        <div class="input-append file">
+                                            <input type="file" name="file" style="width: 284px;">
+                                            <input type="text" style="width: 297px;">
+                                            <button class="btn">Browse</button>
+                                        </div>                            
+                                    </div>
+                                </div>
+
                             <div class="row-form">
                                 <div class="span3">Skills:</div>
                                 <div class="span9">

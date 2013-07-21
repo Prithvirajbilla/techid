@@ -3,6 +3,7 @@
 */
 
 	include_once "../config/config.php";
+	include_once "imageMod.php";
 
 	$error = false;
 
@@ -23,6 +24,7 @@
 	$phone = strip_tags($_POST['phone']);
 	$email = strip_tags($_POST['email']);
 	$dept = strip_tags($_POST['dept']);
+	var_dump($_FILES);
 	if(filter_var($email, FILTER_VALIDATE_EMAIL))
 	{
 		$error = true;
@@ -42,7 +44,29 @@
 		$id = $result_array['id'];
 		$update_query = "update `techid_users` set `fname`='$fname', `lname`='$lname', `rollno`='$rollno',`dept` = '$dept', `room`='$room', `hostel`='$hostel', `about`='$about', `email`='$email', `phone` ='$phone' where `id`='$id' ";
 		$b= mysql_query($update_query);
-		echo $b;
+
+		//image thingy
+		$allowedExts = array("jpeg", "jpg", "png");
+		$temp = explode(".",$_FILES["file"]["name"]);
+		$extension = end($temp);
+		if (( ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg")
+				|| ($_FILES["file"]["type"] == "image/pjpeg") || ($_FILES["file"]["type"] == "image/x-png")
+				|| ($_FILES["file"]["type"] == "image/png")) && ($_FILES["file"]["size"] < 5242880)
+				&& in_array($extension, $allowedExts))
+		{
+			 if ($_FILES["file"]["error"] > 0)
+    		{
+    			return "This error exits" . $_FILES["file"]["error"] . "<br>";
+    		}
+    		else
+    		{
+    			 move_uploaded_file($_FILES["file"]["tmp_name"],"/techid/images/" . $_FILES["file"]["name"]);
+    		}
+		}
+		else
+		{
+			return false;
+		}
 
 	}
 	header("Location: /techid");

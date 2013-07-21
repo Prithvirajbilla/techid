@@ -1,6 +1,14 @@
 <?php 
 /* @author Prithviraj Billa
 */
+    function getDept( $homedirectory ){
+        if (empty($homedirectory)) {
+        return '';
+    }
+        $anotherArray = (explode("/", strrev($homedirectory)));
+        return strrev($anotherArray[1]);
+    }
+
 
     //LDAP server settings
     $ldap_host = 'ldap.iitb.ac.in';
@@ -40,7 +48,13 @@
 		}
 		else
 		{
-			$sql = "INSERT INTO techid_users (username) VALUES ('$ldap_id')";
+			$fname = $info[0]['givenname'][0];
+        	$lname = $info[0]['sn'][0];
+        	$rollno = $info[0]['employeenumber'][0];
+        	$mail = $info[0]['mail'][0];
+        	$dept = getDept($info[0]['homedirectory'][0]);
+
+			$sql = "INSERT INTO techid_users (username,fname,lname,rollno,dept) VALUES ('$ldap_id','$fname','$lname','$rollno','$dept')";
 			$result = mysql_query($sql);
 			$redirect_url = "/techid/settings.php";
 			Header ("Location: " . $redirect_url);
