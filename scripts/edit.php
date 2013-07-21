@@ -24,7 +24,6 @@
 	$phone = strip_tags($_POST['phone']);
 	$email = strip_tags($_POST['email']);
 	$dept = strip_tags($_POST['dept']);
-	var_dump($_FILES);
 	if(filter_var($email, FILTER_VALIDATE_EMAIL))
 	{
 		$error = true;
@@ -58,10 +57,16 @@
     		{
     			return "This error exits" . $_FILES["file"]["error"] . "<br>";
     		}
-    		else
-    		{
-    			 move_uploaded_file($_FILES["file"]["tmp_name"],"/techid/images/" . $_FILES["file"]["name"]);
-    		}
+		    if (file_exists("/techid/images/" . $_FILES["file"]["name"]))
+		      {
+		      	echo $_FILES["file"]["name"] . " already exists. ";
+		      }
+		    else
+		      {
+		      move_uploaded_file($_FILES["file"]["tmp_name"],
+		      "upload/" . $_FILES["file"]["name"]);
+		      echo "Stored in: " . "/techid/images/" . $_FILES["file"]["name"];
+		      }
 		}
 		else
 		{

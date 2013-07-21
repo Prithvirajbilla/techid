@@ -24,8 +24,6 @@
 	}
 	
 	$userjpg = $val.".jpg";
+
 ?>
-
-
-<?php include "include/header.php"; ?>
-<?php include "include/edit.php"; ?>
+<?php include("include/header.php"); ?>

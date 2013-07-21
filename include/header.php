@@ -82,7 +82,7 @@
                 </li>                
                 <li>
                 <div class="user">
-                    <img src="/techid/public/img/examples/users/dmitry_m.jpg" align="left">
+                    <img src="/techid/images/<?php echo $userjpg; ?>" align="left" width="75">
                     <a href="logout.php" class="name">
                         <span><?php echo $result["fname"]." ".$result["lname"] ?></span>
                         <span class="sm">Logout</span>

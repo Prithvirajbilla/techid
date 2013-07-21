@@ -24,8 +24,10 @@
 	}
 	
 	$userjpg = $val.".jpg";
-?>
+	if(!file_exists("images/".$userjpg))
+	{
+		$userjpg = "default.jpg";
+	}
+?>	
+<?php include("include/header.php"); ?>
 
-
-<?php include "include/header.php"; ?>
-<?php include "include/edit.php"; ?>

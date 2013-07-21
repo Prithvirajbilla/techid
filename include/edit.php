@@ -1,3 +1,9 @@
+<?php 
+    include_once ("config/config.php");
+    $query = "SELECT * FROM techid_skills";
+    $result = mysql_query($query);
+
+?>
                 <div class="page-header">
                     <h1><span class="ico-tools"></span> Edit your Profile</h1>
                 </div>
@@ -50,7 +56,7 @@
                                 <div class="span3">About me:</div>
                                 <div class="span9"><textarea name="about" placeholder="about me"><?php echo $result['about'] ?></textarea></div>
                             </div>
-                            <div class="row-form">
+<!--                             <div class="row-form">
                                     <div class="span3">Profile Pic:</div>
                                     <div class="span9">                            
                                         <div class="input-append file">
@@ -60,11 +66,22 @@
                                         </div>                            
                                     </div>
                                 </div>
-
+ -->
                             <div class="row-form">
                                 <div class="span3">Skills:</div>
                                 <div class="span9">
-                                    <input type="text" class="tags" name="tags"  >
+                                    <select name="slot[]" multiple>
+                                        <?php 
+
+                                            while($row = mysql_fetch_array($result))
+                                            { ?>
+                                         <option value="<?php echo $row['id'] ; ?>" > <?php echo $row['name']; ?> </option>
+
+                                            <?php } ?>
+                                    </select>
+                                <span class="help-inline" style="width:300px"><p class="text-info">
+                                    Press ctrl in win and cmd in mac for selecting multiple options</p></span>
+
                                 </div>
                             </div>
                             <div class="row-form">

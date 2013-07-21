@@ -7,7 +7,7 @@
                             <p style="color:white;margin-left:10px;"> About me : <?php echo $result["about"]; ?> </p>
                         </div>
                         <img alt="background" id="full-width-cover" src="/techid/public/img/cover.jpg" style="position: relative; top: 0; left: 0;"/> 
-                        <img alt="profilepic" src="/techid/public/img/me.jpg" width="220"  class="cover" />
+                        <img alt="profilepic" src="/techid/images/large/<?php echo $userjpg; ?>" width="25%" height="25%" class="cover" />
                     </div>
 
                 </div>
@@ -43,9 +43,11 @@
                         <span class="label"> PHP</span>  <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span>
                     </div>
                 </div>
+
             </div>
         </div>
 
     </div>
+
 
           </body>
