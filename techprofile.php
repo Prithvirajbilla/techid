@@ -33,9 +33,9 @@
 		          
 		          WHERE `user_skills`.`tech_id` = $tech_id";
 		    $skills = mysql_query($skills_query);
-		    $skills_array = mysql_fetch_array($skills);
-		    var_dump($skills_array);
-		    
+		    // $skills_array = mysql_fetch_array($skills);
+		    // print_r($skills_array);
+
 
 		}
 	}

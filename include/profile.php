@@ -7,7 +7,7 @@
                             <p style="color:white;margin-left:10px;"> About me : <?php echo $result["about"]; ?> </p>
                         </div>
                         <img alt="background" id="full-width-cover" src="/techid/public/img/cover.jpg" style="position: relative; top: 0; left: 0;"/> 
-                        <img alt="profilepic" src="/techid/images/large/<?php echo $userjpg; ?>" width="25%" height="25%" class="cover" />
+                        <img alt="profilepic" src="/techid/images/large/<?php echo $userjpg; ?>" width="200px" height="200px" class="cover" />
                     </div>
 
                 </div>
@@ -39,11 +39,16 @@
                             <h1><span class="ico-tags"></span> Stuff I'm good at:<small style="margin-left:20px">Frameworks and languanges i'm proficient</small> </h1>
                         </div>
                         <span class="icon-tags"></span>
-                        <span class="label"> Javascript </span> <span class="label"> Ruby on rails </span>
-                        <span class="label"> PHP</span>  <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span> <span class="label"> Python </span>
+                        <?php while($row = mysql_fetch_array($skills))
+                        {?>
+                        <span class="label"> <?php echo $row['name']; ?> </span>
+                        <?php }
+                        if(!$row)
+                        {
+                            echo '<span class="label error"> No Skills are added Start adding your skills </span> ';
+                        } ?>
                     </div>
                 </div>
-
             </div>
         </div>
 
