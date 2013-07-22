@@ -58,6 +58,7 @@
 			$result = mysql_query($sql);
 			$redirect_url = "/techid/settings.php";
 			Header ("Location: " . $redirect_url);
+
 		}
 
 	}
@@ -68,7 +69,7 @@
 	}
 
 
-
+Header("Location: /techid/index.php?error=1");
 
 
 

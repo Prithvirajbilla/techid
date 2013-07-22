@@ -1,5 +1,6 @@
 <?php
 	include_once "config/config.php";
+	include_once "config/achievements.php";
 	if(!isset($_COOKIE['uid']))
 	{
 		header("Location: index.php");
@@ -28,6 +29,16 @@
 	{
 		$userjpg = "default.jpg";
 	}
+	$achieve = new TechIdAcheivements();
+	$getAchieve = $achieve->getUserAchievements($result_array['id']);
+
+
 ?>	
 <?php include("include/header.php"); ?>
+<?php 
+	while($row = mysql_fetch_array($getAchieve))
+	{
+			echo $row ;
+	}
 
+?>

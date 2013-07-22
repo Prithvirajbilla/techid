@@ -31,7 +31,7 @@
             LIMIT 20";
 
             $result = mysql_query($query);
-            return mysql_fetch_array($result);
+            return $result;
 		 }
 		/*
          *  Add a past achievement
