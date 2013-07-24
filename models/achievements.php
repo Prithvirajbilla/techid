@@ -5,30 +5,18 @@
 	*/
 	class TechIdAchievements
 	{
-		 function getUserAchievements($tech_id)
+		 function getPastUserAchievements($tech_id)
 		 {
-	        $query = "SELECT 
-                   `e`.`name` AS `event_name`, `e`.`date` AS `event_date`,
-                   `c`.`name` AS `organizer`,
-                   `a`.`position`, `a`.`desc` AS `achv_desc` 
-                    
-            FROM `techid_user_reg_events` AS `reg`
-                
-            INNER JOIN `techid_events` AS `e`
-                ON `reg`.`event_id` = `e`.`id` AND
-                    `e`.`date` < CURDATE() AND
-                    `e`.`competition_flag` = 'Y'
-                    
-            LEFT JOIN `techid_clubs` AS `c`
-                ON `e`.`club_id` = `c`.`id`
-                
-            LEFT JOIN `techid_user_achievements` AS `a`
-                ON `reg`.`event_id` = `a`.`event_id`
-                
-            WHERE `reg`.`tech_id` = $tech_id
-            
-            ORDER BY `e`.`date` DESC
-            LIMIT 20";
+            $query = "SELECT `pa`.`event_name`, `pa`.`event_date`, `pa`.`position`,
+                                `pa`.`desc` AS `achv_desc`, `club`.`name` AS `organizer`
+                                
+                            FROM `techid_user_past_achievements` AS `pa`
+                            
+                            LEFT JOIN `techid_clubs` AS `club`
+                                ON `pa`.`event_club_id` = `club`.`id`
+                                
+                            WHERE `pa`.`tech_id` = $tech_id
+                                AND `pa`.`verified` = 'Y'";
 
             $result = mysql_query($query);
             return $result;

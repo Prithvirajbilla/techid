@@ -1,7 +1,7 @@
 <?php 
     include_once ("config/config.php");
     $query = "SELECT * FROM techid_skills";
-    $result = mysql_query($query);
+    $result1 = mysql_query($query);
 
 ?>
                 <div class="page-header">
@@ -73,7 +73,7 @@
                                     <select name="slot[]" multiple>
                                         <?php 
 
-                                            while($row = mysql_fetch_array($result))
+                                            while($row = mysql_fetch_array($result1))
                                             { ?>
                                          <option value="<?php echo $row['id'] ; ?>" > <?php echo $row['name']; ?> </option>
 

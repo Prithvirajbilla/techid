@@ -39,14 +39,21 @@
                             <h1><span class="ico-tags"></span> Stuff I'm good at:<small style="margin-left:20px">Frameworks and languanges i'm proficient</small> </h1>
                         </div>
                         <span class="icon-tags"></span>
+                        <?php
+                        if(!($row=mysql_fetch_array($skills)))
+                        {
+                            echo '<span class="label error"> No Skills are added Start adding your skills </span> ';
+                        } 
+                        else
+                        { ?>
+                            <span class="label"> <?php echo $row['name']; ?> </span> 
+                       <?php }
+                        ?>
+
                         <?php while($row = mysql_fetch_array($skills))
                         {?>
                         <span class="label"> <?php echo $row['name']; ?> </span>
-                        <?php }
-                        if(!$row)
-                        {
-                            echo '<span class="label error"> No Skills are added Start adding your skills </span> ';
-                        } ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
