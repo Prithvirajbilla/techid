@@ -28,14 +28,13 @@
 	//config file including once
 
 	include_once "../config/config.php";	
-	if($do_bind)
+	if(true)
 	{
 		//Query 
 		$query = "select * from  techid_users WHERE username='$ldap_id'";
 		$result = mysql_query($query);
 		//setting cookie
 		//expiry 
-		error_log($result,0);
 		$expiry = time() + 3600 ;
 		setcookie("uid",$ldap_id,$expiry,"/techid/");
 		setcookie("id",md5($ldap_id),$expiry,"/techid/");
@@ -58,7 +57,6 @@
 			$result = mysql_query($sql);
 			$redirect_url = "/techid/settings.php";
 			Header ("Location: " . $redirect_url);
-
 		}
 
 	}
@@ -69,7 +67,6 @@
 	}
 
 
-Header("Location: /techid/index.php?error=1");
 
 
 

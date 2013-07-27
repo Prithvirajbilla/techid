@@ -38,11 +38,10 @@
 <?php 
 	if($getAchieve)
 	{
-		echo "awesome";
 		while($row = mysql_fetch_array($getAchieve))
 		{
-				echo "awesome";
-				print_r( $row) ;
+				
+				
 		}
 	}
 	else

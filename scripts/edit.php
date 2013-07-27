@@ -6,7 +6,10 @@
 	include_once "imageMod.php";
 
 	$error = false;
-
+	if(!isset($_POST["fname"]))
+	{
+		header("Location: /techid/settings.php?error=1");
+	}
 	$fname = strip_tags($_POST["fname"]);
 	if($fname == "")
 	{
@@ -24,14 +27,14 @@
 	$phone = strip_tags($_POST['phone']);
 	$email = strip_tags($_POST['email']);
 	$dept = strip_tags($_POST['dept']);
-	if(filter_var($email, FILTER_VALIDATE_EMAIL))
+	if(!filter_var($email, FILTER_VALIDATE_EMAIL))
 	{
 		$error = true;
 	}
 
-	if($error == false)
+	if($error == true)
 	{
-		header("Location : /techid/settings.php?error=1");
+		header("Location :/techid/settings.php?error=1");
 	}
 	elseif(isset($_COOKIE['uid']))
 	{
@@ -44,7 +47,7 @@
 		$update_query = "update `techid_users` set `fname`='$fname', `lname`='$lname', `rollno`='$rollno',`dept` = '$dept', `room`='$room', `hostel`='$hostel', `about`='$about', `email`='$email', `phone` ='$phone' where `id`='$id' ";
 		$b= mysql_query($update_query);
 
-		//image thingy
+/*		//image thingy
 		$allowedExts = array("jpeg", "jpg", "png");
 		$temp = explode(".",$_FILES["file"]["name"]);
 		$extension = end($temp);
@@ -72,8 +75,7 @@
 		{
 			return false;
 		}
-
+*/		header("Location: /techid");
 	}
-	header("Location: /techid");
 
 ?>

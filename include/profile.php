@@ -56,6 +56,10 @@
                         <?php } ?>
                     </div>
                 </div>
+                <div class="row-fluid" style="margin-top:20px;" >
+                    <div class="page-header" style="text-align:center !important">
+                        <p> Initiative By STAB 2013 </p>
+                    </div>
             </div>
         </div>
 

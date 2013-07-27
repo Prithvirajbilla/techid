@@ -47,4 +47,12 @@
 
 ?>
 <?php include "include/header.php"; ?>
+<div class="content" >
+    <div class="page-header">
+        <div class="icon">
+            <span class="ico-profile"></span>
+        </div>
+
+        <h1> Tech Profile  <small> welcome, <?php echo $result["fname"];?> </small></h1>
+    </div>
 <?php include "include/profile.php"; ?>

@@ -35,12 +35,12 @@
 <body >
     <div class="wrapper">
         <div class="top">
-            <a href="" class="logo"></a>
+            <a href="/techid" class="logo"></a>
         </div>
         <div class="body">
             <ul class="navigation">
                 <li>
-                    <a href="/" class="button">
+                    <a href="/techid" class="button">
                         <div class="icon">
                             <span class="ico-home"></span>
                         </div>                    
@@ -90,11 +90,3 @@
                 </div>
                 </li>                
             </ul>
-            <div class="content" >
-                <div class="page-header">
-                    <div class="icon">
-                        <span class="ico-profile"></span>
-                    </div>
-
-                    <h1> Tech Profile  <small> welcome, <?php echo $result["fname"];?> </small></h1>
-                </div>
