@@ -33,9 +33,6 @@
 		          
 		          WHERE `user_skills`.`tech_id` = $tech_id";
 		    $skills = mysql_query($skills_query);
-		    // $skills_array = mysql_fetch_array($skills);
-		    // print_r($skills_array);
-
 
 		}
 	}
@@ -43,7 +40,6 @@
 	{
 		$userjpg = "default.jpg";
 	}
-
 
 ?>
 <?php include "include/header.php"; ?>

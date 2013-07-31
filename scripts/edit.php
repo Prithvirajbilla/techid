@@ -75,7 +75,18 @@
 		{
 			return false;
 		}
-*/		header("Location: /techid");
+*/		
+	  foreach ($_POST['slot'] as $slot)
+      {
+      		if($slot == "none")
+      			break;
+            $query = "INSERT INTO `techid_user_skills` (`tech_id`, `skill_id`)
+                            VALUES ($id, $slot)";
+            
+            $d = mysql_query($query);
+      }
+      header("Location: /techid");
+
 	}
 
 ?>

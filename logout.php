@@ -1,6 +1,4 @@
 <?php
-print_r($_COOKIE);
-
 if(isset($_COOKIE['uid']))
 {
 	setcookie ("uid", "", time()-3600,"/techid/");

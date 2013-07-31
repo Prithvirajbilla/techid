@@ -75,9 +75,11 @@
 
                                             while($row = mysql_fetch_array($result1))
                                             { ?>
-                                         <option value="<?php echo $row['id'] ; ?>" > <?php echo $row['name']; ?> </option>
+
+                                                <option value="<?php echo $row['id'] ; ?>" > <?php echo $row['name']; ?> </option>
 
                                             <?php } ?>
+                                                <option value="none" selected> None </option>
                                     </select>
                                 <span class="help-inline" style="width:300px"><p class="text-info">
                                     Press ctrl in win and cmd in mac for selecting multiple options</p></span>

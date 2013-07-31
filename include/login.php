@@ -42,7 +42,7 @@
             <div class="page-header" >
                 <h1 style="color:white" > Tech ID <small style="color:white"> by STAB, Student Technical Activities, 2013 <br/> Login with your LDAP credentials </small> </h1>
             </div>
-    <form id="loginForm" method="post" action="/techid/scripts/login-script.php">
+    <form id="loginForm" method="post" action="/techid/scripts/login-script2.php">
         <div class="row-fluid">
             <div class="row-form">
                 <div class="span12">

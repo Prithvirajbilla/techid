@@ -19,11 +19,32 @@
 			$result = $techprofile->getInfo();
 			$result_array = mysql_fetch_array($result);
 			$result = $result_array;
-
+			$tech_id = $result['id'];
+			$userjpg = $val.".jpg";
+		    $skills_query = "SELECT    `user_skills`.`skill_id`,
+		                    `skills`.`name`, `skills`.`tagname`, 
+		                    `skills`.`desc`      AS `skill_desc`,
+		                    `user_skills`.`desc` AS `user_skill_desc`
+		          
+		          FROM `techid_user_skills` AS `user_skills`                                              
+		          
+		          LEFT JOIN `techid_skills` AS `skills`
+		          ON `user_skills`.`skill_id` = `skills`.`id`
+		          
+		          WHERE `user_skills`.`tech_id` = $tech_id";
+		    $skills = mysql_query($skills_query);
+		    while($row = mysql_fetch_array($skills) )
+		    {
+		    	$skills_array[] = $row["name"];
+		    }
 		}
 	}
 	
-	$userjpg = $val.".jpg";
+	if(!file_exists("images/".$userjpg))
+	{
+		$userjpg = "default.jpg";
+	}
+
 ?>
 
 
