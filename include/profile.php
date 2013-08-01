@@ -22,7 +22,7 @@
                                           echo "None"; ?></dd>
                             <dt><span class=" ico-info-2"> </span>Room No</dt>
                                 <dd><?php echo $result["room"];
-                                                if($result["rollno"] =="")
+                                                if($result["room"] =="")
                                                 echo "None"; ?></dd>
                             <dt><span class="ico-info"> </span>Hostel</dt>
                                 <dd><?php echo $result["hostel"];
@@ -30,19 +30,19 @@
                                                     echo "None"; ?></dd>
                             <dt><span class="ico-book"> </span> Department </dt>
                                 <dd> <?php echo $result["dept"];
-                                            if($result["hostel"] == "")
+                                            if($result["dept"] == "")
                                                     echo "None"; ?> </dd>
                             <dt><span class=" ico-phone-4"> </span> Contact Number </dt>
                                 <dd> <?php echo $result["phone"];
-                                            if($result["hostel"] == "")
+                                            if($result["phone"] == "")
                                                     echo "None"; ?> </dd>
                             <dt><span class="ico-envelope-3"> </span> Gmail ID </dt>
                                 <dd> <?php echo $result["email"];
-                                                if($result["hostel"] == "")
+                                                if($result["email"] == "")
                                                     echo "None"; ?> </dd>
                             <dt><span class="ico-edit-2"> </span>About me </dt>
                                 <dd> <?php echo $result["about"];
-                                                if($result["hostel"] == "")
+                                                if($result["about"] == "")
                                                     echo "None"; ?> </dd>
                         </dl>
                     </div>

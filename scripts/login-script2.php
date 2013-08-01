@@ -7,10 +7,10 @@
     $password = base64_encode($password);
     $url = "http://www.cse.iitb.ac.in/~prithvirajbilla/ldap-api/index.php?user=".$ldap_id."&pass=".$password;
     $json = file_get_contents($url);
-    $result_array = json_encode($json, TRUE);
+    $result_array = json_decode($json, TRUE);
 	$bind = $result_array["bind"];
 	include_once "../config/config.php";
-	if(/*isset($result_array["bind"]) and $bind*/true)
+	if($bind)
 	{
 		$query = "select * from  techid_users WHERE username='$ldap_id'";
 		$result = mysql_query($query);

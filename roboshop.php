@@ -24,6 +24,30 @@
 	}
 	
 	$userjpg = $val.".jpg";
+	if(!file_exists("images/".$userjpg))
+	{
+		$userjpg = "default.jpg";
+	}
+
 
 ?>
 <?php include("include/header.php"); ?>
+<div class="content" >
+                <div class="page-header">
+                    <div class="icon">
+                        <span class="ico-profile"></span>
+                    </div>
+					<h1>  ROBOSHOP  </h1>
+                </div>
+                <div class="row">
+                	<div class="span6 offset3">
+                		<h1> Coming Soon </h1>
+                		<h3> Buy and Sell Stuff</h3>
+                	</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+          </body>

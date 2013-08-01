@@ -1,6 +1,5 @@
 <?php
 	include_once "config/config.php";
-	include_once "models/achievements.php";
 	if(!isset($_COOKIE['uid']))
 	{
 		header("Location: index.php");
@@ -20,47 +19,31 @@
 			$result = $techprofile->getInfo();
 			$result_array = mysql_fetch_array($result);
 			$result = $result_array;
-
+			$tech_id = $result['id'];
+			$userjpg = $val.".jpg";
 		}
 	}
 	
-	$userjpg = $val.".jpg";
 	if(!file_exists("images/".$userjpg))
 	{
 		$userjpg = "default.jpg";
 	}
-	$achieve = new TechIdAchievements();
-	$getAchieve = $achieve->getPastUserAchievements($result['id']);
-
-
-?>	
-<?php include("include/header.php"); ?>
-<?php 
-	if($getAchieve)
-	{
-		while($row = mysql_fetch_array($getAchieve))
-		{
-				
-				
-		}
-	}
-	else
-	{
-		echo "no Acheivements, Start adding Achievements";
-	}
 
 ?>
-<div class="content" >
+<?php include("include/header.php"); ?>
+	<div class="content" >
                 <div class="page-header">
                     <div class="icon">
                         <span class="ico-profile"></span>
                     </div>
-					<h1>  Achievements  </h1>
+					<h1>  Upcoming Events  </h1>
                 </div>
                 <div class="row">
-                	<div class="span6 offset3">
-                		<h1> Coming Soon </h1>
-                		<h3> You can add your achievements </h3>
+                	<div class="span4 offset3">
+                		<h3> XLR8 regestration </h3>
+                		<h5> By Robotics Club </h5>
+                		<a href="xlr8.php" class="btn"> Register </a>
+                		<a href="http://stab-iitb.org/category/robo-events/"  target="_blank" class="btn"> Details </a>
                 	</div>
                 </div>
             </div>

@@ -3,7 +3,6 @@
 */
 
 	include_once "../config/config.php";
-	include_once "imageMod.php";
 
 	$error = false;
 	if(!isset($_POST["fname"]))
