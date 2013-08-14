@@ -10,9 +10,9 @@
             <p style="color:white;margin-left:10px;"> About me : <?php echo $result["about"]; ?>
              </p>
         </div>
-        <img alt="background" id="full-width-cover" src="/techid/public/img/cover.jpg" 
+        <img alt="background" id="full-width-cover" src="./include/public/img/cover.jpg" 
         style="position: relative; top: 0; left: 0;"/> 
-        <img alt="profilepic" src="/techid/images/large/<?php echo $userjpg; ?>" 
+        <img alt="profilepic" src="./images/large/<?php echo $userjpg; ?>" 
         width="200px" height="200px" class="cover" />
     </div>
 </div>
