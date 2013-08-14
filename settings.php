@@ -1,52 +1,63 @@
 <?php
-	include_once "config/config.php";
-	if(!isset($_COOKIE['uid']))
-	{
-		header("Location: index.php");
-	}
-	else
-	{
-		$val = $_COOKIE['uid'];
-		$pieces = $_COOKIE['id'];
-		if(md5($val) != $pieces)
-		{
-			header("Location: index.php");
-		}
-		else
-		{
-			include_once "scripts/getInfo.php";
-			$techprofile = new Info($val);
-			$result = $techprofile->getInfo();
-			$result_array = mysql_fetch_array($result);
-			$result = $result_array;
-			$tech_id = $result['id'];
-			$userjpg = $val.".jpg";
-		    $skills_query = "SELECT    `user_skills`.`skill_id`,
-		                    `skills`.`name`, `skills`.`tagname`, 
-		                    `skills`.`desc`      AS `skill_desc`,
-		                    `user_skills`.`desc` AS `user_skill_desc`
+	// include_once "config/config.php";
+	// if(!isset($_COOKIE['uid']))
+	// {
+	// 	header("Location: index.php");
+	// }
+	// else
+	// {
+	// 	$val = $_COOKIE['uid'];
+	// 	$pieces = $_COOKIE['id'];
+	// 	if(md5($val) != $pieces)
+	// 	{
+	// 		header("Location: index.php");
+	// 	}
+	// 	else
+	// 	{
+	// 		include_once "scripts/getInfo.php";
+	// 		$techprofile = new Info($val);
+	// 		$result = $techprofile->getInfo();
+	// 		$result_array = mysql_fetch_array($result);
+	// 		$result = $result_array;
+	// 		$tech_id = $result['id'];
+	// 		$userjpg = $val.".jpg";
+	// 	    $skills_query = "SELECT    `user_skills`.`skill_id`,
+	// 	                    `skills`.`name`, `skills`.`tagname`, 
+	// 	                    `skills`.`desc`      AS `skill_desc`,
+	// 	                    `user_skills`.`desc` AS `user_skill_desc`
 		          
-		          FROM `techid_user_skills` AS `user_skills`                                              
+	// 	          FROM `techid_user_skills` AS `user_skills`                                              
 		          
-		          LEFT JOIN `techid_skills` AS `skills`
-		          ON `user_skills`.`skill_id` = `skills`.`id`
+	// 	          LEFT JOIN `techid_skills` AS `skills`
+	// 	          ON `user_skills`.`skill_id` = `skills`.`id`
 		          
-		          WHERE `user_skills`.`tech_id` = $tech_id";
-		    $skills = mysql_query($skills_query);
-		    while($row = mysql_fetch_array($skills) )
-		    {
-		    	$skills_array[] = $row["name"];
-		    }
-		}
-	}
+	// 	          WHERE `user_skills`.`tech_id` = $tech_id";
+	// 	    $skills = mysql_query($skills_query);
+	// 	    while($row = mysql_fetch_array($skills) )
+	// 	    {
+	// 	    	$skills_array[] = $row["name"];
+	// 	    }
+	// 	}
+	// }
 	
-	if(!file_exists("images/".$userjpg))
-	{
-		$userjpg = "default.jpg";
-	}
+	// if(!file_exists("images/".$userjpg))
+	// {
+	// 	$userjpg = "default.jpg";
+	// }
 
 ?>
+<html>
+<?php include "include/head.php"; ?>
+<body>
+<div class="wrapper">
+	<div class="top">
+	    <a href="/techid" class="logo"></a>
+	</div>
+	<div class="body">
+		<?php include "include/nav.php"; ?>
+		<?php include "include/edit-profile.php"; ?>
+    </div>
+</div>
 
-
-<?php include "include/header.php"; ?>
-<?php include "include/edit.php"; ?>
+</body>
+</html>

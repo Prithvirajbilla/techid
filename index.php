@@ -11,4 +11,7 @@
 
 	}
 ?>
+<html>
+<?php include "include/head.php"; ?>
 <?php include "include/login.php"; ?>
+</html>
