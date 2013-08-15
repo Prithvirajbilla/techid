@@ -4,6 +4,9 @@ class techidInfo
 {
 	var $queryString;
 	var $updateCheck;
+	var $profileInfo;
+	var $skillInfo;
+	var $achievementInfo;
 	function __construct($str)
 	{
 		$this->queryString = $str;
@@ -22,6 +25,7 @@ class techidInfo
 		 		$this->updateCheck = 'true';
 		 	}
 		 }
+		 $this->profileInfo = $row;
 		 return $row;
 	}
 	function getSkillsInfo()
@@ -38,6 +42,7 @@ class techidInfo
 		{
 			$skills[] = "No skills added, Add your skills";
 		}
+		$this->skillInfo = $skills;
 		return $skills;
 	}
 
@@ -57,6 +62,7 @@ class techidInfo
 		{
 			$achievements[] = "No skills added, Add your skills";
 		}
+		$this->achievementInfo = $achievements;
 		return $achievements;
 	}
 }
