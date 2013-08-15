@@ -22,7 +22,7 @@ $$$$$$$$\                  $$\             $$\       $$\
                  Login with your LDAP credentials </small> 
                 </h1>
             </div>
-    <form id="loginForm" method="post" action="./scripts/login-script2.php">
+    <form id="loginForm" method="post" action="./scripts/login-script.php">
         <div class="row-fluid">
             <div class="row-form">
                 <div class="span12">

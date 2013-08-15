@@ -1,15 +1,11 @@
 <?php 
-// if there exists acookie
-	if(isset($_COOKIE['uid']))
-	{
-		$val = $_COOKIE['uid'];
-		$pieces = $_COOKIE['id'];
-		if(md5($val) == $pieces && $val != "")
-		{
-			header("Location: techprofile.php");
-		}
-
-	}
+include ("scripts/cookie.php");
+if (checkValidCookie()) 
+{
+	$username = $checkValidCookie();
+	header("Location: /techid/techprofile.php");
+	exit;
+}
 ?>
 <html>
 <?php include "include/head.php"; ?>
