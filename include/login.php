@@ -16,6 +16,11 @@ $$$$$$$$\                  $$\             $$\       $$\
       id="full-screen-background-image" /> 
 
     <div class="login">
+            <?php
+            // echoing the error;
+            if(isset($error))
+              echo $error; 
+            ?>
             <div class="page-header" >
                 <h1 style="color:white" >Tech ID <small style="color:white">
                  by STAB, Student Technical Activities, 2013 <br/> 
@@ -47,20 +52,6 @@ $$$$$$$$\                  $$\             $$\       $$\
                 <div class="span12">
                     <button class="btn" type="submit">Sign in </button>
                     <br/>
-                    <p class="text-error label">
-                    <!-- PHP scripting -->
-                    <?php
-                        if (isset($_GET["error"]))
-                        {
-                            $error_num = $_GET["error"];
-                            if($error_num = 1)
-                            {
-                                echo "Cannot connect to Internet or Invalid login";
-                            }
-                        }
-
-                    ?>
-                    </p>
                 </div>               
             </div>
         </div>

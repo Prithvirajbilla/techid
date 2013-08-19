@@ -1,11 +1,12 @@
 <?php
-$DIRECTORY = "/techid";
+$DIRECTORY = "/techid/";
 /*
 	$val is the ldap id
 */
 $SALT = 'awesome';
 function setPrimaryCookie($val)
 {
+	global $DIRECTORY;
 	$expiry = time() + 3600 ;
 	setcookie("uid",$val,$expiry,$DIRECTORY);
 	$salt_cookie = md5($SALT.$val);
@@ -36,10 +37,10 @@ function checkValidCookie()
 // $val is the cookie name and if the cookie exists it gives the value of the cookie
 function getValueCookie($val)
 {
-	if(isset($val))
+	if(isset($_COOKIE[$val]))
 	{
 		$cookie_val = $_COOKIE[$val];
-		if($cookie_val == "")
+		if($cookie_val != "")
 		{
 			return $cookie_val;
 		}
@@ -57,12 +58,14 @@ function getValueCookie($val)
 // $val is the value of the cookie and the $name is the cookie name
 function setCookieValue($name,$val)
 {
+	global $DIRECTORY;
 	$expiry = time() + 3600 ;
 	setcookie($name,$val,$expiry,$DIRECTORY);
 }
 
 function unsetCookie($val)
 {
+	global $DIRECTORY;
 	if(isset($_COOKIE[$val]))
 	{
 		$expiry = time() - 3600;
