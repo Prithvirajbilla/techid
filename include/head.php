@@ -32,6 +32,7 @@
     <script type='text/javascript' src='./include/public/js/plugins/bootstrap/bootstrap.min.js'></script>
     
     <script type='text/javascript' src="./include/public/js/plugins/uniform/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="./include/public/js/plugins/select/select2.min.js"></script>
     
     
     <script type='text/javascript' src='./include/public/js/plugins.js'></script>

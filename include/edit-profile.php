@@ -86,30 +86,27 @@
                     placeholder="about me"><?php echo $result['about'] ?></textarea>
                 </div>
             </div>
-            <div class="row-form">
-                <div class="span3">Skills:</div>
-                <div class="span9">
-                    <select name="slot[]" multiple>
-                        <?php 
-
-                            while($row = mysql_fetch_array($result1))
-                            { ?>
-
-                                <option value="<?php echo $row['id'] ; ?>" > <?php echo $row['name']; ?> </option>
-
-                            <?php } ?>
-                                <option value="none" selected> None </option>
-                    </select>
-                    <span class="help-inline" style="width:300px">
-                        <p class="text-info">
-                            Press ctrl in win and cmd in mac for selecting multiple options
-                        </p>
-                    </span>
+                <div class="row-form">
+                    <div class="span3">Skills:</div>
+                    <div class="span9">
+                        <select name="s_example" multiple="multiple" class="select" style="width: 100%;">
+                            <option value="0">choose a option...</option>
+                            <option value="1">Andorra</option>
+                            <option value="2">Antarctica</option>
+                            <option value="3">Bulgaria</option>
+                            <option value="4">Germany</option>
+                            <option value="5">Dominican Republic</option>
+                            <option value="6">Micronesia</option>
+                            <option value="7">United Kingdom</option>
+                            <option value="8">Greece</option>
+                            <option value="9">Italy</option>
+                            <option value="10">Ukraine</option>                                                                       
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="row-form">
-                <button class="btn btn-large btn-block btn-success" type="submit">Edit Profile</button>
-                <p class="text-error label">
+                <div class="row-form">
+                    <button class="btn btn-large btn-block btn-success" type="submit">Edit Profile</button>
+                    <p class="text-error label">
                     <!-- PHP scripting -->
                     <?php
                         if (isset($_GET["error"]))

@@ -64,6 +64,7 @@ border-color:#e0e0e0
 {
 	line-height: 30px;
 }
-.label
+.select2-search-choice
 {
+	background-color: rgb(0,154,215) !important;
 }

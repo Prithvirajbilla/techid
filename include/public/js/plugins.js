@@ -23,7 +23,36 @@ $(document).ready(function(){
     }
         
     
+    if($("#ms").length > 0)
+        $("#ms").multiSelect({
+            afterSelect: function(value, text){
+                //action
+            },
+            afterDeselect: function(value, text){
+                //action
+            }});
     
+    
+    if($("#msc").length > 0){
+        $("#msc").multiSelect({
+            selectableHeader: "<div class='multipleselect-header'>Selectable item</div>",
+            selectedHeader: "<div class='multipleselect-header'>Selected items</div>",
+            afterSelect: function(value, text){
+                //action
+            },
+            afterDeselect: function(value, text){
+                //action
+            }            
+        });
+        
+        $("#ms_select").click(function(){
+            $('#msc').multiSelect('select_all');
+        });
+        $("#ms_deselect").click(function(){
+            $('#msc').multiSelect('deselect_all');
+        });        
+    }    
+
     // Validation
     if($("#validate").length > 0)
         $("#validate, #validate_custom").validationEngine('attach',{promptPosition : "topLeft"});
