@@ -7,14 +7,16 @@ $SALT = 'awesome';
 function setPrimaryCookie($val)
 {
 	global $DIRECTORY;
+	global $SALT;
 	$expiry = time() + 3600 ;
 	setcookie("uid",$val,$expiry,$DIRECTORY);
 	$salt_cookie = md5($SALT.$val);
-	setcookie("id",$val,$expiry,$DIRECTORY);
+	setcookie("id",$salt_cookie,$expiry,$DIRECTORY);
 }
 
 function checkValidCookie()
 {
+	global $SALT;
 	if(isset($_COOKIE['uid']) and isset($_COOKIE['id']))
 	{
 		$uid = $_COOKIE['uid'];
