@@ -1,11 +1,11 @@
 
 <div class="row-fluid">
-    <?php
-    //any welcome messages;
-    if(isset($welcome))
-      echo $welcome; 
-    ?>
     <div class="span12 overlap">
+        <?php
+        //any welcome messages;
+        if(isset($welcome))
+            echo $welcome; 
+        ?>
         <div class="span4 offset4 profile-title">
             <div class="page-header">
                 <h1 class="text-white"><span class="ico-user"> </span> 
@@ -69,6 +69,6 @@
             </h1>
         </div>
         <span class="icon-tags"></span>
-
+        <?php echo $skill_html; ?>
     </div>
 </div>

@@ -10,7 +10,7 @@ class techidInfo
 	function __construct($str)
 	{
 		$this->queryString = $str;
-		$his->updateCheck = 'false';
+		$this->updateCheck = 'false';
 	}
 	function getProfileInfo()
 	{

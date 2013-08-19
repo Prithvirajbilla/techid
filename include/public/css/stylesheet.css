@@ -443,3 +443,7 @@ div.tagsinput div input{line-height: 20px; height: 20px; font-size: 11px; margin
     .data.thumbs .thumbnail > a, .data-fluid.thumbs .thumbnail > a{width: 210px; display: block; text-align: center;}
 /* ~GALLERY~ */
 
+.label-space
+{
+    margin: 3px;
+}

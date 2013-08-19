@@ -22,7 +22,11 @@ function checkValidCookie()
 		$uid = $_COOKIE['uid'];
 		$id = $_COOKIE['id'];
 		$hash = md5($SALT.$uid);
-		if($hash == $id)
+		if($uid == "")
+		{
+			return false;
+		}
+		elseif($hash == $id)
 		{
 			return $uid;
 		}

@@ -35,7 +35,30 @@ if($cookieVal == '1')
 
  	// now unsetting the cookie
  	unsetCookie("welcome");
+
+ 	//getting the skills of the user
+ 	//$user contianns the ldap_id of the user
+
+ 	//connecting to database;
+ 	include("config/config.php");
+
+ 	//now using the script techid-info.php
+
+ 	include("scripts/techid-info.php");
+
+ 	$techidObject = new techidInfo($user);
+ 	$skills = $techidObject->getSkillsInfo();
+
+ 	//now i have a variable of skills
+
+ 	$skill_html = "<div>";
+ 	for ($i=0; $i < sizeof($skills); $i++) 
+ 	{ 
+ 		$skill_html = $skill_html . '<span class="label label-space">'.$skills[$i] . '</span>';
+ 	}
+	$skill_html = $skill_html . "</div>";
 ?>
+
 
 <html>
 <?php include "include/head.php"; ?>

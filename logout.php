@@ -7,6 +7,5 @@ if(isset($_COOKIE['id']))
 {
 	setcookie ("id", "", time() - 3600, "/techid/");
 }
-
 header("Location: /techid/");
 ?>
