@@ -49,7 +49,17 @@
     </li>                
     <li>
     <div class="user">
-        <img src="/techid/images/<?php echo $user.'.jpg'; ?>" align="left" width="75">
+        <img src="<?php $userjpg =  $user.'.jpg'; 
+                    if(file_exists('/techid/images/'.$userjpg))
+                    {
+
+                        echo '/techid/images/'.$userjpg;
+                    }
+                    else
+                    {
+                        $userjpg = "/techid/images/default.jpg";
+                        echo "/techid/images/default.jpg";
+                    } ?>" align="left" width="75">
         <a href="logout.php" class="name">
             <span><?php echo $user; ?></span>
             <span class="sm">Logout</span>

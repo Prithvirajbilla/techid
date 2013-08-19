@@ -38,6 +38,8 @@
 			//redirect the user to the techprofile.php
 
 			$redirect_url = "/techid/techprofile.php?id=".$result_arr["id"];
+			//welcome cookie 1. you are welcome :P
+			setCookieValue("welcome","1");
 			Header ("Location: ". $redirect_url);
 			exit;
 		}
@@ -62,6 +64,8 @@
 			$sql = "INSERT INTO techid_users (username,fname,lname,rollno,dept) VALUES ('$ldap_id','$fname','$lname','$rollno','$dept')";
 			$res = mysql_query($sql);
 			$redirect_url = "/techid/settings.php";
+			//welcome cookie. You are welcome :P
+			setCookieValue("welcome","2");
 			Header ("Location: " . $redirect_url);
 			exit;
 		}

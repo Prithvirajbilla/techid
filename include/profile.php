@@ -1,5 +1,10 @@
 
 <div class="row-fluid">
+    <?php
+    //any welcome messages;
+    if(isset($welcome))
+      echo $welcome; 
+    ?>
     <div class="span12 overlap">
         <div class="span4 offset4 profile-title">
             <div class="page-header">
@@ -12,7 +17,7 @@
         </div>
         <img alt="background" id="full-width-cover" src="./include/public/img/cover.jpg" 
         style="position: relative; top: 0; left: 0;"/> 
-        <img alt="profilepic" src="./images/large/<?php echo $userjpg; ?>" 
+        <img alt="profilepic" src="<?php echo $userjpg; ?>" 
         width="200px" height="200px" class="cover" />
     </div>
 </div>
@@ -64,20 +69,6 @@
             </h1>
         </div>
         <span class="icon-tags"></span>
-        <?php
-        if(!($row=mysql_fetch_array($skills)))
-        {
-            echo '<span class="label error"> No Skills are added Start adding your skills </span> ';
-        } 
-        else
-        { ?>
-            <span class="label"> <?php echo $row['name']; ?> </span> 
-       <?php }
-        ?>
 
-        <?php while($row = mysql_fetch_array($skills))
-        {?>
-        <span class="label"> <?php echo $row['name']; ?> </span>
-        <?php } ?>
     </div>
 </div>
