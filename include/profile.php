@@ -25,7 +25,7 @@
 
 <div class="row-fluid" style="border-bottom: 2px solid #e0e0e0;border-top: 2px solid #e0e0e0;">
     <div class="span6 offset3">
-        <dl class="dl-horizontal">
+<!--         <dl class="dl-horizontal">
             <dt><span class="ico-user"> </span>LDAP ID:</dt>
                 <dd> <?php echo $result["username"]; ?></dd>
             <dt><span class=" ico-info"> </span>Roll No:</dt>
@@ -58,6 +58,75 @@
                                     echo "None"; ?> 
                 </dd>
         </dl>
+
+ -->    
+    <div style="margin-top:20px;text-align:center">
+        <h1> Personal Information </h1>
+    </div>
+    <table width="100%"  class="table tickets" style='margin-top:10%'>
+        <tbody>
+        <tr>
+            <td class="bl_blue label-info" style="text-align:center;color:white" width="40%">LDAP ID </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["username"]; ?></span></td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue label-warning" style="text-align:center;color:white" width="40%">Roll No </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["rollno"];
+                          if($result["rollno"] == "")
+                          echo "None"; ?></span>
+            </td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue red" style="text-align:center;color:white" width="40%">Room No </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["room"];
+                                if($result["room"] =="")
+                                echo "None"; ?>
+                        </span>
+            </td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue green" style="text-align:center;color:white" width="40%">Hostel </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["hostel"];
+                                if($result["hostel"] == "")
+                                    echo "None"; ?>
+                            </span>
+            </td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue orange" style="text-align:center;color:white" width="40%"> Department </td>
+            <td style="text-align:center"><span class="mark"> <?php echo $result["dept"];
+                            if($result["dept"] == "")
+                                    echo "None"; ?>
+                            </span>
+            </td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue yellow" style="text-align:center;color:white" width="40%">Contact Number </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["phone"];
+                            if($result["phone"] == "")
+                                    echo "None"; ?> 
+                            </span>
+            </td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue red" style="text-align:center;color:white" width="40%">Email </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["email"];
+                            if($result["email"] == "")
+                                    echo "None"; ?> 
+                            </span>
+            </td>                                        
+        </tr>
+        <tr>
+            <td class="bl_blue green" style="text-align:center;color:white" width="40%">About me </td>
+            <td style="text-align:center"><span class="mark"><?php echo $result["about"];
+                            if($result["about"] == "")
+                                    echo "None"; ?> 
+                            </span>
+            </td>                                        
+        </tr>
+
+        </tbody>
+    </table>
     </div>
 </div>
 
