@@ -1,4 +1,3 @@
-RewriteEngine On # Turn on the rewriting engine
-
+RewriteEngine On 
 RewriteRule		^techid/?$	index.php	[NC,L] 
 RewriteRule		^techid/techprofile/$	techprofile.php		[NC,L]
